@@ -2,6 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>Microsoft.ProjectOxford.Vision.DotNetCore</PackageId>
+    <Authors>Adam Grocholski</Authors>
+    <Company>Adam Grocholski</Company>
+    <Product>Microsoft.ProjectOxford.Vision.DotNetCore</Product>
+    <Version>1.1.0</Version>
+    <Copyright>Copyright (c) 2017</Copyright>
+    <PackageLicenseUrl>https://github.com/adgroc/Cognitive-Common-DotNetCore/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/adgroc/Cognitive-Common-DotNetCore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/adgroc/Cognitive-Common-DotNetCore</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Initial release to support .NET Core 1.1</PackageReleaseNotes>
+    <Description>Microsoft Cognitive Service Vision API Client Library for .NET Core</Description>
+    <PackageTags>Microsoft Project Oxford Cognitive Services Vision Face Caption</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
