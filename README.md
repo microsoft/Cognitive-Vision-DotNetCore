@@ -2,6 +2,11 @@
 
 # Vision API: .NET Core Client Library & Sample
 
+| Branch      | Build Status  |
+| ----------- | ------------- |
+| develop     | [![Build Status](https://travis-ci.org/Microsoft/Cognitive-Vision-DotNetCore.svg?branch=develop)](https://travis-ci.org/Microsoft/Cognitive-Vision-DotNetCore) |
+| master      | [![Build Status](https://travis-ci.org/Microsoft/Cognitive-Vision-DotNetCore.svg?branch=master)](https://travis-ci.org/Microsoft/Cognitive-Vision-DotNetCore) |
+
 ## Overview
 This repo contains the .NET Core client library & samples for the Microsoft Computer Vision API, an offering within [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services), formerly known as Project Oxford.
 
