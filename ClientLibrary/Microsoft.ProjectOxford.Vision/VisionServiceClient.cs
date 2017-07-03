@@ -171,10 +171,9 @@ namespace Microsoft.ProjectOxford.Vision
         /// <returns>The AnalysisResult object.</returns>
         public async Task<AnalysisResult> AnalyzeImageAsync(string url, IEnumerable<VisualFeature> visualFeatures = null, IEnumerable<string> details = null)
         {
-            dynamic request = new ExpandoObject();
-            request.url = url;
+            var request = new UrlBasedRequest(url);
 
-            return await AnalyzeImageAsync<ExpandoObject>(request, visualFeatures, details).ConfigureAwait(false);
+            return await AnalyzeImageAsync(request, visualFeatures, details).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -248,10 +247,9 @@ namespace Microsoft.ProjectOxford.Vision
             string requestUrl = string.Format("{0}/{1}/{2}/{3}?{4}={5}", ServiceHost, ModelsPart, modelName, AnalyzeQuery, _subscriptionKeyName, _subscriptionKey);
             var request = WebRequest.Create(requestUrl);
 
-            dynamic requestObject = new ExpandoObject();
-            requestObject.url = url;
+            var requestObject = new UrlBasedRequest(url);
 
-            return await this.SendAsync<ExpandoObject, AnalysisInDomainResult>("POST", requestObject, request).ConfigureAwait(false);
+            return await this.SendAsync<UrlBasedRequest, AnalysisInDomainResult>("POST", requestObject, request).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -292,10 +290,9 @@ namespace Microsoft.ProjectOxford.Vision
             string requestUrl = string.Format("{0}/{1}?{2}={3}&{4}={5}", ServiceHost, DescribeQuery, _maxCandidatesName, maxCandidates, _subscriptionKeyName, _subscriptionKey);
             var request = WebRequest.Create(requestUrl);
 
-            dynamic requestObject = new ExpandoObject();
-            requestObject.url = url;
+            var requestObject = new UrlBasedRequest(url);
 
-            return await this.SendAsync<ExpandoObject, AnalysisResult>("POST", requestObject, request).ConfigureAwait(false);
+            return await this.SendAsync<UrlBasedRequest, AnalysisResult>("POST", requestObject, request).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -325,10 +322,9 @@ namespace Microsoft.ProjectOxford.Vision
             string requestUrl = string.Format("{0}/{1}?width={2}&height={3}&smartCropping={4}&{5}={6}", ServiceHost, ThumbnailsQuery, width, height, smartCropping, _subscriptionKeyName, _subscriptionKey);
             var request = WebRequest.Create(requestUrl);
 
-            dynamic requestObject = new ExpandoObject();
-            requestObject.url = url;
+            var requestObject = new UrlBasedRequest(url);
 
-            return await this.SendAsync<ExpandoObject, byte[]>("POST", requestObject, request).ConfigureAwait(false);
+            return await this.SendAsync<UrlBasedRequest, byte[]>("POST", requestObject, request).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -359,10 +355,9 @@ namespace Microsoft.ProjectOxford.Vision
             string requestUrl = string.Format("{0}/ocr?language={1}&detectOrientation={2}&{3}={4}", ServiceHost, languageCode, detectOrientation, _subscriptionKeyName, _subscriptionKey);
             var request = WebRequest.Create(requestUrl);
 
-            dynamic requestObject = new ExpandoObject();
-            requestObject.url = imageUrl;
+            var requestObject = new UrlBasedRequest(imageUrl);
 
-            return await this.SendAsync<ExpandoObject, OcrResults>("POST", requestObject, request).ConfigureAwait(false);
+            return await this.SendAsync<UrlBasedRequest, OcrResults>("POST", requestObject, request).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -390,10 +385,9 @@ namespace Microsoft.ProjectOxford.Vision
             string requestUrl = string.Format("{0}/recognizeText?handwriting=true&{1}={2}", ServiceHost, _subscriptionKeyName, _subscriptionKey);
             var request = WebRequest.Create(requestUrl);
 
-            dynamic requestObject = new ExpandoObject();
-            requestObject.url = imageUrl;
+            var requestObject = new UrlBasedRequest(imageUrl);
 
-            return await this.SendAsync<ExpandoObject, HandwritingRecognitionOperation>("POST", requestObject, request).ConfigureAwait(false);
+            return await this.SendAsync<UrlBasedRequest, HandwritingRecognitionOperation>("POST", requestObject, request).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -445,10 +439,9 @@ namespace Microsoft.ProjectOxford.Vision
             string requestUrl = string.Format("{0}/tag?{1}={2}", ServiceHost, _subscriptionKeyName, _subscriptionKey);
             var request = WebRequest.Create(requestUrl);
 
-            dynamic requestObject = new ExpandoObject();
-            requestObject.url = imageUrl;
+            var requestObject = new UrlBasedRequest(imageUrl);
 
-            return await this.SendAsync<ExpandoObject, AnalysisResult>("POST", requestObject, request).ConfigureAwait(false);
+            return await this.SendAsync<UrlBasedRequest, AnalysisResult>("POST", requestObject, request).ConfigureAwait(false);
         }
 
         /// <summary>
